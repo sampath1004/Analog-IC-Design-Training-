@@ -15,16 +15,16 @@ Analog and Mixed-Signal IC Design training program using Cadence Virtuoso.
   
   Av = − gm × ro
 # Circuit
-<img width="521" height="646" alt="image" src="https://github.com/user-attachments/assets/4cb449d0-cd8b-42b3-8dc2-ea2d4ca18c52" />
+<img width="521" height="646" alt="image" src="https://github.com/sampath1004/Analog-IC-Design-Training-/blob/main/mos_circuit.png" />
 
 # DC Analysis 
-<img width="521" height="646" alt="image" src="https://github.com/user-attachments/assets/2ef3b676-5cc0-4100-9c2f-8031cc95c0a7" />
+<img width="521" height="646" alt="image" src="https://github.com/sampath1004/Analog-IC-Design-Training-/blob/main/mos_ac_trans.png" />
 
 # Transient Analysis
-<img width="1366" height="768" alt="image" src="https://github.com/user-attachments/assets/4f1500e7-fbcf-4cd8-9c2f-6ac613c6c5dc" />
+<img width="1366" height="768" alt="image" src="https://github.com/sampath1004/Analog-IC-Design-Training-/blob/main/mos_ac_trans.png" />
 
 # AC Analysis 
- <img width="1366" height="768" alt="image" src="https://github.com/user-attachments/assets/89449a78-8ee5-4895-9ff8-f2d888d05d72" />
+ <img width="1366" height="768" alt="image" src="https://github.com/sampath1004/Analog-IC-Design-Training-/blob/main/mos_ac.png" />
 
 - Observed inversion of output signal with respect to input.
 - Circuit helped understand:
@@ -45,16 +45,13 @@ Analog and Mixed-Signal IC Design training program using Cadence Virtuoso.
 
   Av = − gm × (ro3 || ro4)
 # Circuit
-<img width="1277" height="716" alt="image" src="https://github.com/user-attachments/assets/2733e0cc-6f2c-47fb-a159-1bc3407fa91a" />
-
-# DC Analysis 
-<img width="521" height="646" alt="image" src="https://github.com/user-attachments/assets/2ef3b676-5cc0-4100-9c2f-8031cc95c0a7" />
+<img width="1277" height="716" alt="image" src="https://github.com/sampath1004/Analog-IC-Design-Training-/blob/main/small_circuit_3.png" />
 
 # Transient Analysis
-<img width="1366" height="768" alt="image" src="https://github.com/user-attachments/assets/4f1500e7-fbcf-4cd8-9c2f-6ac613c6c5dc" />
+<img width="1366" height="768" alt="image" src="https://github.com/sampath1004/Analog-IC-Design-Training-/blob/main/small_tran.png" />
 
 # AC Analysis 
- <img width="1366" height="768" alt="image" src="https://github.com/user-attachments/assets/89449a78-8ee5-4895-9ff8-f2d888d05d72" />
+ <img width="1366" height="768" alt="image" src="https://github.com/sampath1004/Analog-IC-Design-Training-/blob/main/small_ac.png" />
  
 - Helped in understanding:
   - Current mirror operation
@@ -78,7 +75,7 @@ Analog and Mixed-Signal IC Design training program using Cadence Virtuoso.
 <img width="832" height="418" alt="image" src="https://github.com/user-attachments/assets/60a48306-d331-4188-9926-7c84ba2b17d8" />
 
 # Transient Analysis
-<img width="1432" height="574" alt="image" src="https://github.com/user-attachments/assets/0ae437d2-35dc-409e-a53c-b0bf361f9bda" />
+<img width="1432" height="574" alt="image" src="https://github.com/sampath1004/Analog-IC-Design-Training-/blob/main/diff_trans.png" />
 - Key observations:
   - Differential operation
   - Common-mode rejection
@@ -98,7 +95,7 @@ Analog and Mixed-Signal IC Design training program using Cadence Virtuoso.
 - Differential amplifier as a functional Op-Amp block.
 <img width="1197" height="604" alt="image" src="https://github.com/user-attachments/assets/31ac0ee4-0598-468a-a5fb-19292ddec4ba" />
 
-<img width="1060" height="555" alt="image" src="https://github.com/user-attachments/assets/9d7174fb-5447-45b5-bd48-102db6737301" />
+<img width="1060" height="555" alt="image" src="https://github.com/sampath1004/Analog-IC-Design-Training-/blob/main/opam.png" />
 
 
 ---
