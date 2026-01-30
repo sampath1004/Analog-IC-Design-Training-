@@ -1,104 +1,121 @@
-# Day 2 – Differential Amplifier and OTA Design
+# Day 2 – Analog IC Design (Hands-on & Circuits)
 
-## Objective
-The goal for Day 2 was to design a MOS differential amplifier and develop it into an Operational Transconductance Amplifier (OTA). We focused on analyzing the circuit's biasing, gain, frequency response, and transient behavior, ending with symbol-level verification.
-
----
-
-## Tools Used
-* Cadence Virtuoso Schematic Editor
-* Cadence Virtuoso ADE L
-* Spectre Simulator
+The Day 2: learning and hands-on circuits designed during the
+Analog and Mixed-Signal IC Design training program using Cadence Virtuoso.
 
 ---
 
-## 1. Differential Amplifier – Transistor Level
+## Circuit 2 – Common Source Amplifier with Active Load
 
-### Circuit Description
-We implemented a differential amplifier using NMOS transistors for the input pair and a PMOS current mirror as the load. A tail current source was included to provide stable biasing for the differential operation.
+- Implemented a common-source (CS) amplifier using NMOS as input device.
+- PMOS transistor used as active load.
+- Bias voltages were applied to set proper operating point by warying W2.
+- Output taken at the drain node.
+- Small-signal gain expression:
+  
+  Av = − gm × ro
+# Circuit
+<img width="521" height="646" alt="image" src="https://github.com/user-attachments/assets/4cb449d0-cd8b-42b3-8dc2-ea2d4ca18c52" />
 
-### Differential Amplifier Schematic
-![Differential Amplifier](./images/Diff_Amplifier.png)
+# DC Analysis 
+<img width="521" height="646" alt="image" src="https://github.com/user-attachments/assets/2ef3b676-5cc0-4100-9c2f-8031cc95c0a7" />
 
----
+# Transient Analysis
+<img width="1366" height="768" alt="image" src="https://github.com/user-attachments/assets/4f1500e7-fbcf-4cd8-9c2f-6ac613c6c5dc" />
 
-## 2. Port Configuration
-Input and output ports were added to the schematic. This step is essential for creating a symbol and allowing the design to be used in hierarchical simulations.
+# AC Analysis 
+ <img width="1366" height="768" alt="image" src="https://github.com/user-attachments/assets/89449a78-8ee5-4895-9ff8-f2d888d05d72" />
 
-### Adding Ports
-![Adding Ports](./images/adding_ports.png)
-
----
-
-## 3. DC Operating Point Analysis
-We ran a DC analysis to ensure the circuit was biased correctly. The main goal was to confirm that every transistor remained in the proper operating region.
-
-**Observations:**
-* The input NMOS transistors were confirmed to be in saturation.
-* The tail current was measured to verify the bias level.
-* Input and output DC voltages were checked for stability.
-* The PMOS mirror successfully balanced the current between the two branches.
-
-### DC Analysis Plot
-![DC Analysis](./images/ckt2_DCanalysis.png)
+- Observed inversion of output signal with respect to input.
+- Circuit helped understand:
+  - Biasing
+  - Gain
+  - Saturation region operation
+- The gain is still less so we move on to the another ciruit with load as pmos not diode connected.
 
 ---
 
-## 4. AC Small-Signal Analysis
-AC analysis was used to determine the frequency response and gain of the differential amplifier.
+## Circuit 3 – Common Source Amplifier with Current Mirror Load
 
+- NMOS transistor used as amplifying device.
+- PMOS current mirror used as active load.
+- Improved gain compared to resistive load.
+- Bias voltage applied to mirror transistor.
+- Small-signal gain expression:
 
+  Av = − gm × (ro3 || ro4)
+# Circuit
+<img width="1277" height="716" alt="image" src="https://github.com/user-attachments/assets/2733e0cc-6f2c-47fb-a159-1bc3407fa91a" />
 
-**Observations:**
-* We measured the low-frequency differential gain.
-* We identified the frequency where the gain begins to drop (roll-off).
-* The single dominant pole behavior suggests the amplifier is stable.
+# DC Analysis 
+<img width="521" height="646" alt="image" src="https://github.com/user-attachments/assets/2ef3b676-5cc0-4100-9c2f-8031cc95c0a7" />
 
----
+# Transient Analysis
+<img width="1366" height="768" alt="image" src="https://github.com/user-attachments/assets/4f1500e7-fbcf-4cd8-9c2f-6ac613c6c5dc" />
 
-## 5. Transient Response
-A transient simulation was performed by applying out-of-phase sine waves to the differential inputs.
-
-**Observations:**
-* The circuit showed effective current steering between the branches.
-* The output waveform confirmed that the differential signal was being amplified.
-* The peak-to-peak output voltage was consistent with our design goals.
-
-### Differential Transient Response
-![Differential Transient](./images/differential_transient.png)
-
----
-
-## 6. Design Variations
-We explored different circuit configurations to see how transistor sizing impacts performance.
-
-* **Variation 2:** This design maintained a stable DC point and balanced gain with bandwidth.
-* **Variation 3:** By increasing the width of the transistors, we improved the transconductance and gain, though the extra capacitance slightly reduced the bandwidth.
-
-### Variation Plots
-![Circuit 2 AC Analysis](./images/ckt2_ACanalysis.png)
-![Circuit 3 Transient Analysis](./images/ckt3_Transientanalysis.png)
+# AC Analysis 
+ <img width="1366" height="768" alt="image" src="https://github.com/user-attachments/assets/89449a78-8ee5-4895-9ff8-f2d888d05d72" />
+ 
+- Helped in understanding:
+  - Current mirror operation
+  - Output resistance enhancement
+  - Gain improvement techniques
 
 ---
 
-## 7. Symbol Generation
-A symbol was generated for the OTA. This makes the design more modular, allowing us to use the amplifier as a single block in larger systems.
+## Circuit 4 – Differential Amplifier
 
-### OTA Symbol
-![OTA Symbol](./images/symbol.png)
+- Designed a MOSFET differential amplifier.
+- Two NMOS transistors used as differential pair.
+- PMOS transistors used as active loads.
+- Tail current source implemented using NMOS.
+- Differential input applied to both gates.
+- Output taken from one side of the differential pair.
+# Circuit
+<img width="832" height="418" alt="image" src="https://github.com/user-attachments/assets/d7cae71f-7853-49b8-97a8-b0e8621ea200" />
+
+# DC Analysis 
+<img width="832" height="418" alt="image" src="https://github.com/user-attachments/assets/60a48306-d331-4188-9926-7c84ba2b17d8" />
+
+# Transient Analysis
+<img width="1432" height="574" alt="image" src="https://github.com/user-attachments/assets/0ae437d2-35dc-409e-a53c-b0bf361f9bda" />
+- Key observations:
+  - Differential operation
+  - Common-mode rejection
+  - Bias current control
+- Forms the core block of operational amplifiers.
 
 ---
 
-## 8. Testbench Verification
-The final step involved placing the OTA symbol into a testbench to confirm it performs the same way as the original schematic.
+## Symbol Creation of Operational Amplifier
 
-**Observations:**
-* The symbol correctly accepted the differential input signals.
-* Power supplies were connected and verified.
-* The results from the symbol-level test matched our transistor-level simulations.
+- Created Op-Amp symbol using the previously designed differential amplifier circuit.
+- Pins defined:
+  - Differential inputs (+, −)
+  - Output
+  - Power supply (VDD)
+  - Ground (VSS)
+- Differential amplifier as a functional Op-Amp block.
+<img width="1197" height="604" alt="image" src="https://github.com/user-attachments/assets/31ac0ee4-0598-468a-a5fb-19292ddec4ba" />
 
-### Symbol Testbench
-![Symbol Testbench](./images/symbol_test.png)
+<img width="1060" height="555" alt="image" src="https://github.com/user-attachments/assets/9d7174fb-5447-45b5-bd48-102db6737301" />
+
+
+---
+
+## Bandgap Reference (BGR) Circuit
+
+- Bandgap Reference circuit was discussed and implemented at circuit level.
+- Focus was on understanding:
+  - Circuit structure
+  - Use of BJTs/MOS devices
+- Aim of BGR:
+  - Generate temperature-independent reference voltage
+- Only circuit implementation was performed (no detailed analysis).
+
+---
+
+---
 
 ---
 
