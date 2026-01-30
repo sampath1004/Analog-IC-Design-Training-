@@ -40,27 +40,28 @@ By carefully summing these two together, the downward slope of the CTAT cancels 
   - Observing voltage and gain characteristics
 
  # Circuit 1 : CS amplifier 
-<img width="1600" height="900" alt="image" src="https://github.com/user-attachments/assets/a40e7f81-5070-430c-b1de-25e109f039e0" />
+<img width="1600" height="900" alt="image" src="https://github.com/sampath1004/Analog-IC-Design-Training-/blob/main/IMG-20260128-WA0000.jpg" />
 
-<img width="1600" height="900" alt="image" src="https://github.com/user-attachments/assets/b16237f2-794b-4bee-b2a0-99f585572224" />
 
 # DC Analysis 
-<img width="1600" height="900" alt="image" src="https://github.com/user-attachments/assets/a04b9648-76b1-45bd-9052-0d94ff7753e8" />
+<img width="1600" height="900" alt="image" src="https://github.com/sampath1004/Analog-IC-Design-Training-/blob/main/IMG-20260128-WA0005.jpg" />
 
 # DC Sweep wrt Rd
-<img width="1600" height="900" alt="image" src="https://github.com/user-attachments/assets/0b87f07f-58cf-4814-a09c-b9b01565ead4" />
+<img width="1600" height="900" alt="image" src="https://github.com/sampath1004/Analog-IC-Design-Training-/blob/main/IMG-20260128-WA0003.jpg" />
 
 # DC Sweep wrt Vin
-<img width="1600" height="900" alt="image" src="https://github.com/user-attachments/assets/d00c843a-599d-485d-b72c-aca72b38ed08" />
+<img width="1600" height="900" alt="image" src="https://github.com/sampath1004/Analog-IC-Design-Training-/blob/main/IMG-20260128-WA0002.jpg" />
 
 # Transient Analysis 
-<img width="1600" height="900" alt="image" src="https://github.com/user-attachments/assets/91fdb8a0-51e3-4ace-a36b-be0fee72aa91" />
+<img width="1600" height="900" alt="image" src="https://github.com/sampath1004/Analog-IC-Design-Training-/blob/main/IMG-20260128-WA0006.jpg" />
 
 # AC Analysis 
 
+<img width="1600" height="900" alt="image" src="https://github.com/sampath1004/Analog-IC-Design-Training-/blob/main/IMG-20260128-WA0004.jpg" />
 
 # Parametric analysis
-<img width="1600" height="900" alt="image" src="https://github.com/user-attachments/assets/e41a1b72-d
+
+<img width="1600" height="900" alt="image" src="https://github.com/sampath1004/Analog-IC-Design-Training-/blob/main/IMG-20260128-WA0001.jpg" />
 
 ---
 # conclusion
