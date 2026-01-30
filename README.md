@@ -25,4 +25,40 @@ First, we use a **CTAT (Complementary to Absolute Temperature)** voltage. This i
 
 By carefully summing these two together, the downward slope of the CTAT cancels the upward slope of the PTAT. This creates a rock-solid output of about **1.2V**, which is the bandgap of silicon. We use BJTs for this even in CMOS designs because they are much more predictable than MOSFETs when it comes to temperature changes.
 
+## Hands-on Session
 
+- A **Common-Source (CS) amplifier** was designed and simulated using **Cadence Virtuoso**.
+- The design helped in understanding:
+  - Biasing techniques
+  - Gain behavior
+  - MOSFET operation in saturation region
+
+- Hands-on experience was gained in:
+  - Schematic entry using Virtuoso
+  - Simulation setup
+  - Running analyses
+  - Observing voltage and gain characteristics
+
+ # Circuit 1 : CS amplifier 
+<img width="185" height="260" alt="image" src="https://github.com/user-attachments/assets/a40e7f81-5070-430c-b1de-25e109f039e0" />
+
+<img width="1600" height="900" alt="image" src="https://github.com/user-attachments/assets/b16237f2-794b-4bee-b2a0-99f585572224" />
+
+# DC Analysis 
+<img width="1600" height="900" alt="image" src="https://github.com/user-attachments/assets/a04b9648-76b1-45bd-9052-0d94ff7753e8" />
+
+# DC Sweep wrt Rd
+<img width="1600" height="900" alt="image" src="https://github.com/user-attachments/assets/0b87f07f-58cf-4814-a09c-b9b01565ead4" />
+
+# DC Sweep wrt Vin
+<img width="1600" height="900" alt="image" src="https://github.com/user-attachments/assets/d00c843a-599d-485d-b72c-aca72b38ed08" />
+
+# Transient Analysis 
+<img width="1600" height="900" alt="image" src="https://github.com/user-attachments/assets/91fdb8a0-51e3-4ace-a36b-be0fee72aa91" />
+
+# Parametric analysis
+<img width="1600" height="900" alt="image" src="https://github.com/user-attachments/assets/e41a1b72-d
+
+---
+
+Day 1 was all about moving from textbook theory to actual design work. We started by learning how to keep a MOSFET in the "saturation" region to get the best amplification, and why blocks like BGRs and LDOs are necessary to keep a chip stable. The highlight was the hands-on session where we used Cadence Virtuoso to build a Common-Source amplifier. By running different tests—like DC, transient, and parametric sweeps—we saw exactly how changing a single resistor or bias voltage can completely change the amplifier's gain and performance.
