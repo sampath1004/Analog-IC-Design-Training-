@@ -1,19 +1,12 @@
-# Day 2 – Analog IC Design (Hands-on & Circuits)
+#  Day 2 – Differential Amplifier  Using Cadence Virtuoso
 
-The Day 2: learning and hands-on circuits designed during the
-Analog and Mixed-Signal IC Design training program using Cadence Virtuoso.
 
+## Tools Used
+- Cadence Virtuoso Schematic Editor  
+- Cadence Virtuoso ADE L  
+- Spectre Simulator  
+## Circuit 1
 ---
-
-## Circuit 2 – Common Source Amplifier with Active Load
-
-- Implemented a common-source (CS) amplifier using NMOS as input device.
-- PMOS transistor used as active load.
-- Bias voltages were applied to set proper operating point by warying W2.
-- Output taken at the drain node.
-- Small-signal gain expression:
-  
-  Av = − gm × ro
 # Circuit
 <img width="521" height="646" alt="image" src="https://github.com/sampath1004/Analog-IC-Design-Training-/blob/main/mos_circuit.png" />
 
@@ -35,7 +28,7 @@ Analog and Mixed-Signal IC Design training program using Cadence Virtuoso.
 
 ---
 
-## Circuit 3 – Common Source Amplifier with Current Mirror Load
+## Circuit 2
 
 - NMOS transistor used as amplifying device.
 - PMOS current mirror used as active load.
@@ -60,7 +53,7 @@ Analog and Mixed-Signal IC Design training program using Cadence Virtuoso.
 
 ---
 
-## Circuit 4 – Differential Amplifier
+## Circuit 3– Differential Amplifier
 
 - Designed a MOSFET differential amplifier.
 - Two NMOS transistors used as differential pair.
@@ -112,9 +105,6 @@ Analog and Mixed-Signal IC Design training program using Cadence Virtuoso.
 
 ---
 
----
-
----
 
 ## Day 2 Summary
 * Completed the design and analysis of a MOS differential amplifier.
