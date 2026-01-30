@@ -40,7 +40,7 @@ By carefully summing these two together, the downward slope of the CTAT cancels 
   - Observing voltage and gain characteristics
 
  # Circuit 1 : CS amplifier 
-<img width="185" height="260" alt="image" src="https://github.com/user-attachments/assets/a40e7f81-5070-430c-b1de-25e109f039e0" />
+<img width="1600" height="900" alt="image" src="https://github.com/user-attachments/assets/a40e7f81-5070-430c-b1de-25e109f039e0" />
 
 <img width="1600" height="900" alt="image" src="https://github.com/user-attachments/assets/b16237f2-794b-4bee-b2a0-99f585572224" />
 
@@ -56,9 +56,12 @@ By carefully summing these two together, the downward slope of the CTAT cancels 
 # Transient Analysis 
 <img width="1600" height="900" alt="image" src="https://github.com/user-attachments/assets/91fdb8a0-51e3-4ace-a36b-be0fee72aa91" />
 
+# AC Analysis 
+
+
 # Parametric analysis
 <img width="1600" height="900" alt="image" src="https://github.com/user-attachments/assets/e41a1b72-d
 
 ---
-
+# conclusion
 Day 1 was all about moving from textbook theory to actual design work. We started by learning how to keep a MOSFET in the "saturation" region to get the best amplification, and why blocks like BGRs and LDOs are necessary to keep a chip stable. The highlight was the hands-on session where we used Cadence Virtuoso to build a Common-Source amplifier. By running different tests—like DC, transient, and parametric sweeps—we saw exactly how changing a single resistor or bias voltage can completely change the amplifier's gain and performance.
