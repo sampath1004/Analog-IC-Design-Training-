@@ -22,7 +22,7 @@ Software Tools
 ------------------------------------------------------------
 
 BGR Circuit Schematic:
-<img width="1600" height="900" alt="image" src="https://github.com/user-attachments/assets/a04b9648-76b1-45bd-9052-0d94ff7753e8" />
+<img width="1600" height="900" alt="image" src="https://github.com/sampath1004/Analog-IC-Design-Training-/blob/main/Screenshot%20from%202026-01-29%2015-18-23.png" />
 
 The Bandgap Reference circuit is designed to generate a stable
 reference voltage that remains nearly constant with changes
@@ -36,7 +36,7 @@ two voltages cancel each other’s temperature dependency.
 ------------------------------------------------------------
 
 DC Sweep Output:
-<img width="1600" height="900" alt="image" src="https://github.com/user-attachments/assets/a04b9648-76b1-45bd-9052-0d94ff7753e8" />
+<img width="1600" height="900" alt="image" src="https://github.com/sampath1004/Analog-IC-Design-Training-/blob/main/Screenshot%20from%202026-01-29%2011-10-21.png" />
 
 Internal Node Voltages:
 <img width="1600" height="900" alt="image" src="https://github.com/user-attachments/assets/a04b9648-76b1-45bd-9052-0d94ff7753e8" />
