@@ -4,11 +4,11 @@ Cadence Virtuoso | Spectre Simulator
 ------------------------------------------------------------
 Objective
 ------------------------------------------------------------
-The aim of this session was to design and study a Bandgap
-Reference (BGR) circuit along with a Differential Amplifier.
-The focus was on understanding temperature compensation,
-verifying PTAT and CTAT behavior, and evaluating the amplifier
-performance in both time and frequency domains.
+The objective of this session was to design and analyze a
+Bandgap Reference (BGR) circuit and a Differential Amplifier.
+The main focus was on temperature compensation, PTAT and CTAT
+behavior, and evaluating the amplifier in both time and
+frequency domains.
 
 ------------------------------------------------------------
 Software Tools
@@ -22,32 +22,32 @@ Software Tools
 ------------------------------------------------------------
 
 BGR Circuit Schematic:
-![BGR](./images/BGR.png)
+<img width="1600" height="900" alt="image" src="https://github.com/user-attachments/assets/a04b9648-76b1-45bd-9052-0d94ff7753e8" />
 
-The Bandgap Reference circuit is used to generate a stable
-reference voltage that remains nearly constant over
-temperature. This is achieved by combining a CTAT voltage,
-which decreases with temperature, and a PTAT voltage, which
-increases with temperature. Proper scaling of these voltages
-allows their temperature effects to cancel each other.
+The Bandgap Reference circuit is designed to generate a stable
+reference voltage that remains nearly constant with changes
+in temperature. This is achieved by combining a CTAT voltage,
+which decreases as temperature rises, and a PTAT voltage,
+which increases with temperature. When properly scaled, these
+two voltages cancel each other’s temperature dependency.
 
 ------------------------------------------------------------
 2. DC Temperature Sweep Analysis
 ------------------------------------------------------------
 
 DC Sweep Output:
-![DC Sweep](./images/BGR_op1.png)
+<img width="1600" height="900" alt="image" src="https://github.com/user-attachments/assets/a04b9648-76b1-45bd-9052-0d94ff7753e8" />
 
 Internal Node Voltages:
-![Node Voltages](./images/BGR_op2.png)
+<img width="1600" height="900" alt="image" src="https://github.com/user-attachments/assets/a04b9648-76b1-45bd-9052-0d94ff7753e8" />
 
 Final Reference Voltage:
-![Vref](./images/BGR_op3.png)
+<img width="1600" height="900" alt="image" src="https://github.com/user-attachments/assets/a04b9648-76b1-45bd-9052-0d94ff7753e8" />
 
-Observations from DC Sweep:
-- Temperature range considered: 0 °C to 100 °C
+Observations:
+- Temperature range: 0 °C to 100 °C
 - Output voltage stays close to 1.23 V
-- Small negative slope observed across temperature
+- Slight negative slope observed
 - CTAT voltage decreases with temperature
 - PTAT voltage increases with temperature
 
@@ -56,7 +56,7 @@ Observations from DC Sweep:
 ------------------------------------------------------------
 
 PTAT Voltage vs Temperature:
-![PTAT](./images/cdata.png)
+<img width="1600" height="900" alt="image" src="https://github.com/user-attachments/assets/a04b9648-76b1-45bd-9052-0d94ff7753e8" />
 
 Extracted Values:
 
@@ -69,7 +69,7 @@ Temperature (°C) | PTAT Voltage (V)
 100              | 406.4 µV
 
 Inference:
-- PTAT voltage shows an almost linear increase
+- PTAT voltage increases almost linearly
 - Approximate slope is 0.4 mV per 100 °C
 
 ------------------------------------------------------------
@@ -77,34 +77,92 @@ Inference:
 ------------------------------------------------------------
 
 Vref ppm Plot:
-![Vref ppm](./images/calc.png)
+<img width="1600" height="900" alt="image" src="https://github.com/user-attachments/assets/a04b9648-76b1-45bd-9052-0d94ff7753e8" />
 
 Key Results:
 - Temperature coefficient ≈ −60 ppm/°C
-- Indicates good temperature stability
-- Further trimming can reduce variation
+- Shows good temperature stability
+- Further trimming can improve accuracy
 
 ------------------------------------------------------------
 5. Differential Amplifier – Transient Analysis
 ------------------------------------------------------------
 
 Transient Response:
-![Transient](./images/differential_transient.png)
+<img width="1600" height="900" alt="image" src="https://github.com/user-attachments/assets/a04b9648-76b1-45bd-9052-0d94ff7753e8" />
 
 Observations:
-- Differential outputs are balanced and sinusoidal
+- Differential outputs are clean and sinusoidal
 - Proper common-mode voltage is maintained
-- No clipping or waveform distortion observed
+- No clipping or distortion observed
 
 ------------------------------------------------------------
 6. Frequency Domain (FFT) Analysis
 ------------------------------------------------------------
 
 FFT of Differential Input:
-![FFT Input](./images/diff_spect1.png)
+<img width="1600" height="900" alt="image" src="https://github.com/user-attachments/assets/a04b9648-76b1-45bd-9052-0d94ff7753e8" />
 
 FFT of Differential Output:
-![FFT Output](./images/diff_spect2.png)
+<img width="1600" height="900" alt="image" src="https://github.com/user-attachments/assets/a04b9648-76b1-45bd-9052-0d94ff7753e8" />
+
+Noise Spectrum:
+<img width="1600" height="900" alt="image" src="https://github.com/user-attachments/assets/a04b9648-76b1-45bd-9052-0d94ff7753e8" />
+
+Inference:
+- Noise dominates the frequency spectrum
+- Signal amplitude is relatively low
+- Performance is limited by noise floor
+
+------------------------------------------------------------
+7. FFT Performance Parameters
+------------------------------------------------------------
+
+Input Node (Din1):
+<img width="1600" height="900" alt="image" src="https://github.com/user-attachments/assets/a04b9648-76b1-45bd-9052-0d94ff7753e8" />
+
+- ENOB  = −1.86 bits
+- SINAD = −9.41 dB
+- SNR   = −9.41 dB
+- SFDR  = 0.09 dBc
+
+Output Node (Dout) – Case 1:
+<img width="1600" height="900" alt="image" src="https://github.com/user-attachments/assets/a04b9648-76b1-45bd-9052-0d94ff7753e8" />
+
+- SINAD = −6.16 dB
+- SNR   = −6.16 dB
+- SFDR  = 0.68 dBc
+- THD   = 0 %
+
+Output Node (Dout) – Case 2:
+<img width="1600" height="900" alt="image" src="https://github.com/user-attachments/assets/a04b9648-76b1-45bd-9052-0d94ff7753e8" />
+
+- Signal Power     = −101.77 dB
+- DC Power         = −58.37 dB
+- Noise Floor      = −102.36 dB
+- Integrated Noise = −118.89 dB
+
+Output Node (Dout) – Case 3:
+<img width="1600" height="900" alt="image" src="https://github.com/user-attachments/assets/a04b9648-76b1-45bd-9052-0d94ff7753e8" />
+
+- Signal Power     = −122.71 dB
+- DC Power         = −28.70 dB
+- Noise Floor      = −126.55 dB
+- Integrated Noise = −143.09 dB
+
+------------------------------------------------------------
+Key Takeaways
+------------------------------------------------------------
+- Bandgap Reference provides a stable output near 1.23 V
+- PTAT and CTAT voltages compensate temperature variations
+- DC sweep confirms good thermal stability
+- Differential amplifier shows stable transient behavior
+- FFT analysis indicates noise-limited performance
+- Further optimization of gain and biasing is possible
+
+------------------------------------------------------------
+End of Day 3
+------------------------------------------------------------![FFT Output](./images/diff_spect2.png)
 
 Noise Spectrum:
 ![FFT Noise](./images/diff_spect3.png)
