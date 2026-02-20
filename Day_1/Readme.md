@@ -14,6 +14,10 @@ The goal of Day 1 was to build and simulate a basic Common Source (CS) amplifier
 ## Circuit Overview
 A single-stage NMOS Common Source amplifier was designed and biased using a suitable DC voltage to ensure saturation region operation. The circuit performance was evaluated using DC, AC, transient, and parametric simulations to observe its electrical behavior under different conditions.
 
+## Circuit
+<img width="1366" height="768" alt="image" src="https://github.com/sampath1004/Analog-IC-Design-Training-/blob/4cb084d7c129b9810aa834a70276d734b63e137b/IMG-20260128-WA0000.jpg" />
+
+
 ---
 
 ## 1. DC Analysis
@@ -26,10 +30,10 @@ DC simulation was performed to determine the operating point of the amplifier by
 - Important parameters such as VGS, VDS, ID, and transconductance (gm) were extracted and verified.
 
 ### DC Response
-<img width="521" height="646" alt="image" src="https://github.com/sampath1004/Analog-IC-Design-Training-/blob/main/mos_circuit.png" />
+ <img width="1366" height="768" alt="image" src="https://github.com/sampath1004/Analog-IC-Design-Training-/blob/4cb084d7c129b9810aa834a70276d734b63e137b/IMG-20260128-WA0005.jpg" />
 
 ### Operating Point Parameters
-<img width="521" height="646" alt="image" src="https://github.com/sampath1004/Analog-IC-Design-Training-/blob/main/mos_circuit.png" />
+ <img width="1366" height="768" alt="image" src="https://github.com/sampath1004/Analog-IC-Design-Training-/blob/4cb084d7c129b9810aa834a70276d734b63e137b/IMG-20260128-WA0002.jpg" />
 
 ---
 
@@ -42,8 +46,8 @@ AC analysis was conducted to examine the frequency response and determine the sm
 - Gain gradually decreases at higher frequencies due to device parasitics.
 - Phase response confirms stable amplifier behavior without oscillations.
 
-### AC Gain and Phase Plot
-<img width="521" height="646" alt="image" src="https://github.com/sampath1004/Analog-IC-Design-Training-/blob/main/mos_circuit.png" />
+### AC Analysis
+ <img width="1366" height="768" alt="image" src="https://github.com/sampath1004/Analog-IC-Design-Training-/blob/4cb084d7c129b9810aa834a70276d734b63e137b/IMG-20260128-WA0004.jpg" />
 
 ---
 
@@ -57,7 +61,7 @@ A sinusoidal input signal was applied to observe the time-domain response of the
 - Confirms proper biasing and linear region operation.
 
 ### Transient Waveform
-<img width="521" height="646" alt="image" src="https://github.com/sampath1004/Analog-IC-Design-Training-/blob/main/mos_circuit.png" />
+ <img width="1366" height="768" alt="image" src="https://github.com/sampath1004/Analog-IC-Design-Training-/blob/4cb084d7c129b9810aa834a70276d734b63e137b/IMG-20260128-WA0006.jpg" />
 
 ---
 
@@ -70,11 +74,8 @@ Parametric sweeps were performed by varying bias voltage and load resistance to 
 - Load resistance impacts voltage gain and operating point.
 - Parametric analysis helps optimize design parameters.
 
-### Parametric Setup
-<img width="521" height="646" alt="image" src="https://github.com/sampath1004/Analog-IC-Design-Training-/blob/main/mos_circuit.png" />
-
 ### Parametric Results
-<img width="521" height="646" alt="image" src="https://github.com/sampath1004/Analog-IC-Design-Training-/blob/main/mos_circuit.png" />
+ <img width="1366" height="768" alt="image" src="https://github.com/sampath1004/Analog-IC-Design-Training-/blob/4cb084d7c129b9810aa834a70276d734b63e137b/IMG-20260128-WA0001.jpg" />
 
 ---
 
