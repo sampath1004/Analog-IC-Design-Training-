@@ -7,9 +7,9 @@
 
 Day 3 focused on the design, simulation, and performance evaluation of a **Bandgap Reference (BGR)** and a **Differential Amplifier**.
 
-### Goals:
+### Goals
 - Generate a temperature-independent reference voltage
-- Analyze PTAT and CTAT characteristics
+- Analyze PTAT and CTAT behavior
 - Perform DC temperature sweep analysis
 - Conduct transient and FFT simulations
 - Extract performance metrics: SINAD, SNR, ENOB, SFDR
@@ -17,100 +17,131 @@ Day 3 focused on the design, simulation, and performance evaluation of a **Bandg
 ---
 
 ## Tools Used
-
 - Cadence Virtuoso (ADE L / ADE XL)
 - Spectre Simulator
 - Visualization & Analysis XL (Calculator + Spectrum)
 
 ---
 
-# 1. Bandgap Reference (BGR)
+# 1️⃣ Bandgap Reference (BGR)
+
+## BGR Schematic
+
+![BGR Schematic](./images/BGR.png)
+
+---
 
 ## Concept
 
 A Bandgap Reference produces a nearly constant voltage (~1.23 V) by combining:
 
 - **CTAT Voltage (V_BE)** → Decreases with temperature  
-- **PTAT Voltage (ΔV_BE-based)** → Increases with temperature  
+- **PTAT Voltage (ΔV_BE)** → Increases with temperature  
 
-By scaling and summing these components properly, temperature variations cancel, resulting in a stable reference voltage.
-
----
-
-## DC Temperature Sweep
-
-### Temperature Range:
-0 °C to 100 °C
-
-### Observations:
-- **VREF ≈ 1.23 V**
-- Slight negative slope across temperature
-- PTAT increases linearly
-- CTAT decreases linearly
-- Proper temperature compensation achieved
+Proper scaling ensures temperature cancellation, resulting in a stable reference voltage.
 
 ---
 
-## PTAT Characterization
+## DC Temperature Sweep Analysis
+
+### DC Output vs Temperature
+
+![BGR DC Output](./images/BGR_op1.png)
+
+### Observed Node Voltages
+
+![BGR Nodes](./images/BGR_op2.png)
+
+### Final Output Voltage
+
+![BGR Output](./images/BGR_op3.png)
+
+### Observations
+- Temperature Range: 0 °C to 100 °C  
+- VREF ≈ 1.23 V  
+- Slight negative slope  
+- PTAT increases linearly  
+- CTAT decreases linearly  
+
+---
+
+# 2️⃣ PTAT Characteristic
+
+## PTAT Voltage vs Temperature
+
+![PTAT Characteristic](./images/cdata.png)
+
+### Extracted Values
 
 | Temperature (°C) | PTAT Voltage (V) |
 |------------------|------------------|
-| 10               | 400.4 µV         |
-| 20               | 402.1 µV         |
-| 30               | 402.9 µV         |
-| 50               | 404.0 µV         |
-| 100              | 406.4 µV         |
+| 10               | 400.4 µV |
+| 20               | 402.1 µV |
+| 30               | 402.9 µV |
+| 50               | 404.0 µV |
+| 100              | 406.4 µV |
 
-### Extracted Slope:
-~0.4 mV per 100 °C
-
-This confirms correct PTAT generation.
+**PTAT Slope ≈ 0.4 mV / 100 °C**
 
 ---
 
-## Temperature Coefficient (TC)
+# 3️⃣ Temperature Coefficient (VREF ppm)
 
-- **VREF TC ≈ −59 ppm/°C to −62 ppm/°C**
+![VREF ppm](./images/calc.png)
 
-Indicates:
-- Effective first-order temperature cancellation
-- Minor residual curvature
-- Possible improvement via trimming
+### Observed Temperature Coefficient
+≈ −59 ppm/°C to −62 ppm/°C  
+
+Indicates effective first-order temperature compensation with minor residual curvature.
 
 ---
 
-# 2. Differential Amplifier
+# 4️⃣ Differential Amplifier
 
 ## Transient Analysis
 
-### Observations:
+![Differential Transient](./images/differential_transient.png)
+
+### Observations
 - Clean sinusoidal differential output
-- Proper common-mode bias
-- No clipping
-- Stable operation
+- Proper common-mode biasing
+- No clipping observed
+- Stable and symmetric operation
 
 ---
 
-# 3. FFT Analysis
+# 5️⃣ Frequency Domain (FFT) Analysis
 
-FFT performed on differential input and output nodes.
+## FFT – Differential Input
+
+![FFT Input](./images/diff_spect1.png)
+
+## FFT – Differential Output
+
+![FFT Output](./images/diff_spect2.png)
+
+## Noise Spectrum
+
+![FFT Noise](./images/diff_spect3.png)
 
 ---
 
-## Performance Metrics
+# 6️⃣ Extracted Performance Metrics
 
-### Input Node (Din1)
+## Input Node (Din1)
+
+![Metrics Din1](./images/m1.png)
 
 - ENOB: −1.8559 bits  
 - SINAD: −9.4126 dB  
 - SNR: −9.4126 dB  
 - SFDR: 0.0895 dBc  
 
-Indicates very low signal amplitude relative to noise.
-
 ---
 
-### Output Node (Dout) – Case 1
+## Output Node – Case 1
+
+![Metrics Dout Case1](./images/m2.png)
 
 - SINAD: −6.1596 dB  
 - SNR: −6.1596 dB  
@@ -119,7 +150,9 @@ Indicates very low signal amplitude relative to noise.
 
 ---
 
-### Output Node (Dout) – Case 2
+## Output Node – Case 2
+
+![Metrics Dout Case2](./images/m3.png)
 
 - Signal Power: −101.77 dB  
 - DC Power: −58.37 dB  
@@ -128,7 +161,9 @@ Indicates very low signal amplitude relative to noise.
 
 ---
 
-### Output Node (Dout) – Case 3
+## Output Node – Case 3
+
+![Metrics Dout Case3](./images/m4.png)
 
 - Signal Power: −122.71 dB  
 - DC Power: −28.70 dB  
@@ -137,26 +172,31 @@ Indicates very low signal amplitude relative to noise.
 
 ---
 
-# Analysis & Interpretation
+# 7️⃣ Technical Summary
 
-- Reference voltage stabilized near 1.23 V
-- PTAT and CTAT behavior validated
-- Differential amplifier functionally correct
-- FFT shows noise-dominated performance
-- Improvement areas:
-  - Increase gain
-  - Optimize biasing
-  - Improve device sizing
-  - Add filtering
+## Bandgap Reference
+- Achieved ~1.23 V stable reference
+- Verified PTAT & CTAT compensation
+- Temperature coefficient within −60 ppm/°C
+- Validated performance across 0–100 °C
+
+## Differential Amplifier
+- Stable transient behavior
+- Proper differential operation
+- Noise-dominated FFT response
+- Scope for gain optimization and bias refinement
 
 ---
 
-# Day 3 Summary
+# 📌 Day 3 Conclusion
 
-- Designed and validated Bandgap Reference
-- Verified PTAT & CTAT temperature behavior
-- Performed DC temperature sweep
-- Conducted transient and FFT analysis
-- Extracted SINAD, SNR, ENOB, SFDR
+Successfully:
+- Designed and validated a Bandgap Reference circuit
+- Verified PTAT and CTAT temperature behavior
+- Performed DC temperature sweep analysis
+- Conducted transient and FFT simulations
+- Extracted SINAD, SNR, ENOB, SFDR, and noise metrics
 
-Result: Functional circuits with clear optimization path for improved dynamic performance.
+The circuits are functionally correct with clear scope for dynamic performance improvement and optimization in future iterations.
+
+---
