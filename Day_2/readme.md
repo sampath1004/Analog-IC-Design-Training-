@@ -1,7 +1,7 @@
 #  Day 2 – Differential Amplifier  Using Cadence Virtuoso
   Started with bgr and analysed the two different circuit.where which one has better gain so after we did differential amplifier and symbol creation .with help of amplifier we converted that to op amp in new cell view.
 
-## Tools Used
+## Tools used
 - Cadence Virtuoso Schematic Editor  
 - Cadence Virtuoso ADE L  
 - Spectre Simulator  
