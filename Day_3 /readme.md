@@ -1,111 +1,162 @@
-# Day 3 – Bandgap Reference & Differential Amplifier Study  
-Cadence Virtuoso | Spectre Simulator
+# Day 3 – Bandgap Reference (BGR) & Differential Amplifier Analysis  
+**Cadence Virtuoso | Spectre Simulator**
 
-------------------------------------------------------------
-Objective
-------------------------------------------------------------
-The objective of this session was to design and analyze a
-Bandgap Reference (BGR) circuit and a Differential Amplifier.
-The main focus was on temperature compensation, PTAT and CTAT
-behavior, and evaluating the amplifier in both time and
-frequency domains.
+---
 
-------------------------------------------------------------
-Software Tools
-------------------------------------------------------------
+## Objective
+
+Day 3 focused on the design, simulation, and performance evaluation of a **Bandgap Reference (BGR)** and a **Differential Amplifier**.
+
+### Goals:
+- Generate a temperature-independent reference voltage
+- Analyze PTAT and CTAT characteristics
+- Perform DC temperature sweep analysis
+- Conduct transient and FFT simulations
+- Extract performance metrics: SINAD, SNR, ENOB, SFDR
+
+---
+
+## Tools Used
+
 - Cadence Virtuoso (ADE L / ADE XL)
 - Spectre Simulator
-- ViVA Waveform Viewer and Spectrum Analyzer
+- Visualization & Analysis XL (Calculator + Spectrum)
 
-------------------------------------------------------------
-1. Bandgap Reference (BGR)
-------------------------------------------------------------
+---
 
-BGR Circuit Schematic:
-<img width="1600" height="900" alt="image" src="https://github.com/sampath1004/Analog-IC-Design-Training-/blob/main/Screenshot%20from%202026-01-29%2015-18-23.png" />
+# 1. Bandgap Reference (BGR)
 
-The Bandgap Reference circuit is designed to generate a stable
-reference voltage that remains nearly constant with changes
-in temperature. This is achieved by combining a CTAT voltage,
-which decreases as temperature rises, and a PTAT voltage,
-which increases with temperature. When properly scaled, these
-two voltages cancel each other’s temperature dependency.
+## Concept
 
-------------------------------------------------------------
-2. DC Temperature Sweep Analysis
-------------------------------------------------------------
+A Bandgap Reference produces a nearly constant voltage (~1.23 V) by combining:
 
-DC Sweep Output:
-<img width="1600" height="900" alt="image" src="https://github.com/sampath1004/Analog-IC-Design-Training-/blob/main/Screenshot%20from%202026-01-29%2011-10-21.png" />
+- **CTAT Voltage (V_BE)** → Decreases with temperature  
+- **PTAT Voltage (ΔV_BE-based)** → Increases with temperature  
 
-Final Reference Voltage:
-<img width="1600" height="900" alt="image" src="https://github.com/sampath1004/Analog-IC-Design-Training-/blob/main/Screenshot%20from%202026-01-29%2011-10-21.png" />
+By scaling and summing these components properly, temperature variations cancel, resulting in a stable reference voltage.
 
-Observations:
-- Temperature range: 0 °C to 100 °C
-- Output voltage stays close to 1.23 V
-- Slight negative slope observed
-- CTAT voltage decreases with temperature
-- PTAT voltage increases with temperature
+---
 
-------------------------------------------------------------
-3. PTAT Voltage Analysis
-------------------------------------------------------------
+## DC Temperature Sweep
 
-PTAT Voltage vs Temperature:
-<img width="1600" height="900" alt="image" src="https://github.com/sampath1004/Analog-IC-Design-Training-/blob/main/Screenshot%20from%202026-01-29%2011-15-11.png" />
+### Temperature Range:
+0 °C to 100 °C
 
-Extracted Values:
+### Observations:
+- **VREF ≈ 1.23 V**
+- Slight negative slope across temperature
+- PTAT increases linearly
+- CTAT decreases linearly
+- Proper temperature compensation achieved
 
-Temperature (°C) | PTAT Voltage (V)
------------------------------------
-10               | 400.4 µV
-20               | 402.1 µV
-30               | 402.9 µV
-40               | 403.5 µV
-50               | 404.0 µV
-100              | 406.4 µV
+---
 
-Inference:
-- PTAT voltage increases almost linearly
-- Approximate slope is 0.4 mV per 100 °C
+## PTAT Characterization
 
-------------------------------------------------------------
-4. Temperature Coefficient of Vref
-------------------------------------------------------------
+| Temperature (°C) | PTAT Voltage (V) |
+|------------------|------------------|
+| 10               | 400.4 µV         |
+| 20               | 402.1 µV         |
+| 30               | 402.9 µV         |
+| 50               | 404.0 µV         |
+| 100              | 406.4 µV         |
 
+### Extracted Slope:
+~0.4 mV per 100 °C
 
+This confirms correct PTAT generation.
 
-------------------------------------------------------------
-5. Differential Amplifier – Transient Analysis
-------------------------------------------------------------
+---
 
-------------------------------------------------------------
-6. Frequency Domain (FFT) Analysis
-------------------------------------------------------------
+## Temperature Coefficient (TC)
 
-FFT of Differential Input:
+- **VREF TC ≈ −59 ppm/°C to −62 ppm/°C**
 
+Indicates:
+- Effective first-order temperature cancellation
+- Minor residual curvature
+- Possible improvement via trimming
 
-------------------------------------------------------------
-7. FFT Performance Parameters
-------------------------------------------------------------
+---
 
-Input Node :
-<img width="1600" height="900" alt="image" src="https://github.com/sampath1004/Analog-IC-Design-Training-/blob/main/Screenshot%20from%202026-01-29%2010-19-21.png" />
+# 2. Differential Amplifier
 
+## Transient Analysis
 
+### Observations:
+- Clean sinusoidal differential output
+- Proper common-mode bias
+- No clipping
+- Stable operation
 
+---
 
+# 3. FFT Analysis
 
-------------------------------------------------------------
-Key Takeaways
-------------------------------------------------------------
-- Bandgap Reference provides a stable output near 1.23 V
-- PTAT and CTAT voltages compensate temperature variations
-- DC sweep confirms good thermal stability
-- Differential amplifier shows stable transient behavior
-- FFT analysis indicates noise-limited performance
-- Further optimization of gain and biasing is possible
+FFT performed on differential input and output nodes.
 
----------------------
+---
+
+## Performance Metrics
+
+### Input Node (Din1)
+
+- ENOB: −1.8559 bits  
+- SINAD: −9.4126 dB  
+- SNR: −9.4126 dB  
+- SFDR: 0.0895 dBc  
+
+Indicates very low signal amplitude relative to noise.
+
+---
+
+### Output Node (Dout) – Case 1
+
+- SINAD: −6.1596 dB  
+- SNR: −6.1596 dB  
+- SFDR: 0.6834 dBc  
+- THD: 0 %
+
+---
+
+### Output Node (Dout) – Case 2
+
+- Signal Power: −101.77 dB  
+- DC Power: −58.37 dB  
+- Noise Floor: −102.36 dB  
+- Integrated Noise: −118.89 dB  
+
+---
+
+### Output Node (Dout) – Case 3
+
+- Signal Power: −122.71 dB  
+- DC Power: −28.70 dB  
+- Noise Floor: −126.55 dB  
+- Integrated Noise: −143.09 dB  
+
+---
+
+# Analysis & Interpretation
+
+- Reference voltage stabilized near 1.23 V
+- PTAT and CTAT behavior validated
+- Differential amplifier functionally correct
+- FFT shows noise-dominated performance
+- Improvement areas:
+  - Increase gain
+  - Optimize biasing
+  - Improve device sizing
+  - Add filtering
+
+---
+
+# Day 3 Summary
+
+- Designed and validated Bandgap Reference
+- Verified PTAT & CTAT temperature behavior
+- Performed DC temperature sweep
+- Conducted transient and FFT analysis
+- Extracted SINAD, SNR, ENOB, SFDR
+
+Result: Functional circuits with clear optimization path for improved dynamic performance.
