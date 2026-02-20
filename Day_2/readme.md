@@ -5,9 +5,9 @@
 - Cadence Virtuoso Schematic Editor  
 - Cadence Virtuoso ADE L  
 - Spectre Simulator  
-## Circuit 1
+## CS with diode connected pmos
 ---
-# Circuit
+# CS with active load
 <img width="521" height="646" alt="image" src="https://github.com/sampath1004/Analog-IC-Design-Training-/blob/main/mos_circuit.png" />
 
 # DC Analysis 
@@ -28,7 +28,7 @@
 
 ---
 
-## Circuit 2
+## CS with diode connected pmos
 
 - NMOS transistor used as amplifying device.
 - PMOS current mirror used as active load.
