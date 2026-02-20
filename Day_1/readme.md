@@ -26,10 +26,10 @@ DC simulation was performed to determine the operating point of the amplifier by
 - Important parameters such as VGS, VDS, ID, and transconductance (gm) were extracted and verified.
 
 ### DC Response
-![DC Analysis](./images/DC_analysis.png)
+<img width="521" height="646" alt="image" src="https://github.com/sampath1004/Analog-IC-Design-Training-/blob/main/mos_circuit.png" />
 
 ### Operating Point Parameters
-![DC Operating Point](./images/DC_analysis_OP.png)
+<img width="521" height="646" alt="image" src="https://github.com/sampath1004/Analog-IC-Design-Training-/blob/main/mos_circuit.png" />
 
 ---
 
@@ -43,7 +43,7 @@ AC analysis was conducted to examine the frequency response and determine the sm
 - Phase response confirms stable amplifier behavior without oscillations.
 
 ### AC Gain and Phase Plot
-![AC Analysis](./images/AC_ANALYSIS.png)
+<img width="521" height="646" alt="image" src="https://github.com/sampath1004/Analog-IC-Design-Training-/blob/main/mos_circuit.png" />
 
 ---
 
@@ -57,7 +57,7 @@ A sinusoidal input signal was applied to observe the time-domain response of the
 - Confirms proper biasing and linear region operation.
 
 ### Transient Waveform
-![Transient Analysis](./images/transient_analysis.png)
+<img width="521" height="646" alt="image" src="https://github.com/sampath1004/Analog-IC-Design-Training-/blob/main/mos_circuit.png" />
 
 ---
 
@@ -71,10 +71,10 @@ Parametric sweeps were performed by varying bias voltage and load resistance to 
 - Parametric analysis helps optimize design parameters.
 
 ### Parametric Setup
-![Parametric Analysis Setup](./images/parametric_analysis.png)
+<img width="521" height="646" alt="image" src="https://github.com/sampath1004/Analog-IC-Design-Training-/blob/main/mos_circuit.png" />
 
 ### Parametric Results
-![Parametric Output](./images/parametric_output.png)
+<img width="521" height="646" alt="image" src="https://github.com/sampath1004/Analog-IC-Design-Training-/blob/main/mos_circuit.png" />
 
 ---
 
