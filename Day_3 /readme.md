@@ -27,7 +27,7 @@ Day 3 focused on the design, simulation, and performance evaluation of a **Bandg
 
 ## BGR Schematic
 
-<img width="1366" height="768" alt="image" src="https://github.com/sampath1004/Analog-IC-Design-Training-/blob/main/mos_ac_trans.png" />
+<img width="1366" height="768" alt="image" src="https://github.com/sampath1004/Analog-IC-Design-Training-/blob/2229bc61bdaf37ce681c4ce296c4b0c417d31c5d/BGR.png" />
 
 
 ---
@@ -47,17 +47,17 @@ Proper scaling ensures temperature cancellation, resulting in a stable reference
 
 ### DC Output vs Temperature
 
-<img width="1366" height="768" alt="image" src="https://github.com/sampath1004/Analog-IC-Design-Training-/blob/main/mos_ac_trans.png" />
+<img width="1366" height="768" alt="image" src="https://github.com/sampath1004/Analog-IC-Design-Training-/blob/2229bc61bdaf37ce681c4ce296c4b0c417d31c5d/BGR_op1.png" />
 
 
 ### Observed Node Voltages
 
-<img width="1366" height="768" alt="image" src="https://github.com/sampath1004/Analog-IC-Design-Training-/blob/main/mos_ac_trans.png" />
+<img width="1366" height="768" alt="image" src="https://github.com/sampath1004/Analog-IC-Design-Training-/blob/2229bc61bdaf37ce681c4ce296c4b0c417d31c5d/BGR_op2.png" />
 
 
 ### Final Output Voltage
 
-<img width="1366" height="768" alt="image" src="https://github.com/sampath1004/Analog-IC-Design-Training-/blob/main/mos_ac_trans.png" />
+<img width="1366" height="768" alt="image" src="https://github.com/sampath1004/Analog-IC-Design-Training-/blob/2229bc61bdaf37ce681c4ce296c4b0c417d31c5d/BGR_op3.png" />
 
 
 ### Observations
@@ -73,7 +73,7 @@ Proper scaling ensures temperature cancellation, resulting in a stable reference
 
 ## PTAT Voltage vs Temperature
 
-<img width="1366" height="768" alt="image" src="https://github.com/sampath1004/Analog-IC-Design-Training-/blob/main/mos_ac_trans.png" />
+<img width="1366" height="768" alt="image" src="https://github.com/sampath1004/Analog-IC-Design-Training-/blob/2229bc61bdaf37ce681c4ce296c4b0c417d31c5d/cdata.png" />
 
 
 ### Extracted Values
@@ -92,7 +92,7 @@ Proper scaling ensures temperature cancellation, resulting in a stable reference
 
 # 3️⃣ Temperature Coefficient (VREF ppm)
 
-<img width="1366" height="768" alt="image" src="https://github.com/sampath1004/Analog-IC-Design-Training-/blob/main/mos_ac_trans.png" />
+<img width="1366" height="768" alt="image" src="https://github.com/sampath1004/Analog-IC-Design-Training-/blob/2229bc61bdaf37ce681c4ce296c4b0c417d31c5d/calc.png" />
 
 ### Observed Temperature Coefficient
 ≈ −59 ppm/°C to −62 ppm/°C  
@@ -105,7 +105,7 @@ Indicates effective first-order temperature compensation with minor residual cur
 
 ## Transient Analysis
 
-<img width="1366" height="768" alt="image" src="https://github.com/sampath1004/Analog-IC-Design-Training-/blob/main/mos_ac_trans.png" />
+<img width="1366" height="768" alt="image" src="https://github.com/sampath1004/Analog-IC-Design-Training-/blob/2229bc61bdaf37ce681c4ce296c4b0c417d31c5d/diff_trans.png" />
 
 
 ### Observations
@@ -120,16 +120,16 @@ Indicates effective first-order temperature compensation with minor residual cur
 
 ## FFT – Differential Input
 
-<img width="1366" height="768" alt="image" src="https://github.com/sampath1004/Analog-IC-Design-Training-/blob/main/mos_ac_trans.png" />
+<img width="1366" height="768" alt="image" src="https://github.com/sampath1004/Analog-IC-Design-Training-/blob/2229bc61bdaf37ce681c4ce296c4b0c417d31c5d/diff_spect1.png" />
 
 ## FFT – Differential Output
 
-<img width="1366" height="768" alt="image" src="https://github.com/sampath1004/Analog-IC-Design-Training-/blob/main/mos_ac_trans.png" />
+<img width="1366" height="768" alt="image" src="https://github.com/sampath1004/Analog-IC-Design-Training-/blob/2229bc61bdaf37ce681c4ce296c4b0c417d31c5d/diff_spect2.png" />
 
 
 ## Noise Spectrum
 
-<img width="1366" height="768" alt="image" src="https://github.com/sampath1004/Analog-IC-Design-Training-/blob/main/mos_ac_trans.png" />
+<img width="1366" height="768" alt="image" src="https://github.com/sampath1004/Analog-IC-Design-Training-/blob/2229bc61bdaf37ce681c4ce296c4b0c417d31c5d/diff_spect3.png" />
 
 
 ---
@@ -138,7 +138,7 @@ Indicates effective first-order temperature compensation with minor residual cur
 
 ## Input Node (Din1)
 
-<img width="1366" height="768" alt="image" src="https://github.com/sampath1004/Analog-IC-Design-Training-/blob/main/mos_ac_trans.png" />
+<img width="1366" height="768" alt="image" src="https://github.com/sampath1004/Analog-IC-Design-Training-/blob/2229bc61bdaf37ce681c4ce296c4b0c417d31c5d/m1.png" />
 
 - ENOB: −1.8559 bits  
 - SINAD: −9.4126 dB  
@@ -149,7 +149,7 @@ Indicates effective first-order temperature compensation with minor residual cur
 
 ## Output Node – Case 1
 
-<img width="1366" height="768" alt="image" src="https://github.com/sampath1004/Analog-IC-Design-Training-/blob/main/mos_ac_trans.png" />
+<img width="1366" height="768" alt="image" src="https://github.com/sampath1004/Analog-IC-Design-Training-/blob/2229bc61bdaf37ce681c4ce296c4b0c417d31c5d/m2.png" />
 
 
 - SINAD: −6.1596 dB  
@@ -161,7 +161,7 @@ Indicates effective first-order temperature compensation with minor residual cur
 
 ## Output Node – Case 2
 
-<img width="1366" height="768" alt="image" src="https://github.com/sampath1004/Analog-IC-Design-Training-/blob/main/mos_ac_trans.png" />
+<img width="1366" height="768" alt="image" src="https://github.com/sampath1004/Analog-IC-Design-Training-/blob/2229bc61bdaf37ce681c4ce296c4b0c417d31c5d/m3.png" />
 
 - Signal Power: −101.77 dB  
 - DC Power: −58.37 dB  
@@ -172,7 +172,7 @@ Indicates effective first-order temperature compensation with minor residual cur
 
 ## Output Node – Case 3
 
-<img width="1366" height="768" alt="image" src="https://github.com/sampath1004/Analog-IC-Design-Training-/blob/main/mos_ac_trans.png" />
+<img width="1366" height="768" alt="image" src="https://github.com/sampath1004/Analog-IC-Design-Training-/blob/2229bc61bdaf37ce681c4ce296c4b0c417d31c5d/m4.png" />
 
 - Signal Power: −122.71 dB  
 - DC Power: −28.70 dB  
